@@ -11,18 +11,18 @@ makeCacheMatrix <- function(x = matrix()) {
         if(nrow(x) != ncol(x)) {
         print ("Please enter a square matrix")
         return(NaN)}
-        if det(det(x) == 0) {
+        if (det(x) == 0) {
         print ("Please enter a non-singular matrix")
         return (NaN)
         }
                 m <- NULL
-                set <<- function(y) {
+                set <- function(y) {
                         x <<- y
                         m <<- NULL
                 }
         get <- function() x
-        setInverse <- function (solve)m <<- solve
-        getInverse <- function () m
+        setInverse <- function(solve)m <<- solve
+        getInverse <- function() m
         list(set = set, get = get, setInverse = setInverse, getInverse = getInverse)
 }
 
